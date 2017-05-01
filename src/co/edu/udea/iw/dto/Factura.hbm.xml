@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-May-2017 07:36:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Factura" table="FACTURA">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="fechaVenta" type="java.util.Date" not-null="true">
+            <column name="FECHAVENTA" />
+        </property>
+        <many-to-one name="filial" class="co.edu.udea.iw.dto.Filial" fetch="join" lazy="false">
+            <column name="FILIAL" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
