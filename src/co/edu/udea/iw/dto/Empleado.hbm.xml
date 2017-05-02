@@ -9,10 +9,10 @@
             <generator class="assigned" />
         </id>
         <property name="nombre" type="java.lang.String" length="45" not-null="true">
-            <column name="NOMBRE" />
+            <column name="nombre" />
         </property>
         <many-to-one name="tipoEmpleado" class="co.edu.udea.iw.dto.TipoEmpleado" fetch="join" lazy="false">
-            <column name="TIPOEMPLEADO" />
+            <column name="tipoEmpleado" />
         </many-to-one>
     </class>
 </hibernate-mapping>
