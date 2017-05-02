@@ -12,7 +12,7 @@ public class Solicitud {
 	private Date fechaCrecion;
 	private String descripcion;
 	private String correo;
-	private String productoServicio;
+	private Motivo motivo;	
 	private Factura factura;
 	private Filial filial;
 	private Empleado empleadoAsignado;
@@ -51,11 +51,11 @@ public class Solicitud {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public String getProductoServicio() {
-		return productoServicio;
+	public Motivo getMotivo() {
+		return motivo;
 	}
-	public void setProductoServicio(String productoServicio) {
-		this.productoServicio = productoServicio;
+	public void setMotivo(Motivo motivo) {
+		this.motivo = motivo;
 	}
 	public Factura getFactura() {
 		return factura;

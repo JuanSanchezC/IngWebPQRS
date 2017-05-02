@@ -22,6 +22,8 @@
 				<value>co/edu/udea/iw/dto/Solicitud.hbm.xml</value>
 				<value>co/edu/udea/iw/dto/TipoEmpleado.hbm.xml</value>
 				<value>co/edu/udea/iw/dto/TipoSolicitud.hbm.xml</value>
+				<value>co/edu/udea/iw/dto/Motivo.hbm.xml</value>
+				<value>co/edu/udea/iw/dto/TipoMotivo.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

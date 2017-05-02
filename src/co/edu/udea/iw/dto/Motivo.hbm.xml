@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-May-2017 14:55:41 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Motivo" table="motivo">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="codigo" type="java.lang.String" length="10" not-null="false">
+            <column name="codigo" />
+        </property>
+        <property name="nombre" type="java.lang.String" length="45" not-null="false">
+            <column name="nombre" />
+        </property>
+        <many-to-one name="tipoMotivo" class="co.edu.udea.iw.dto.TipoMotivo" fetch="join" lazy="false">
+            <column name="tipoMotivo" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

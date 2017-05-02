@@ -5,14 +5,14 @@
 <hibernate-mapping>
     <class name="co.edu.udea.iw.dto.TipoEmpleado" table="tipoEmpleado">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="java.lang.String" length="45" not-null="true">
-            <column name="NOMBRE" />
+            <column name="nombre" />
         </property>
         <property name="codigo" type="java.lang.String" length="10" not-null="true">
-            <column name="CODIGO" />
+            <column name="codigo" />
         </property>
     </class>
 </hibernate-mapping>

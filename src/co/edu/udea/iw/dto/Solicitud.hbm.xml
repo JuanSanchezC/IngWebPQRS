@@ -1,48 +1,48 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 01-May-2017 07:36:50 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 02-May-2017 15:05:07 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="co.edu.udea.iw.dto.Solicitud" table="solicitud">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tipoSolicitud" class="co.edu.udea.iw.dto.TipoSolicitud" fetch="join" lazy="false" not-null="false">
-            <column name="TIPOSOLICITUD" />
+        <many-to-one name="tipoSolicitud" class="co.edu.udea.iw.dto.TipoSolicitud" fetch="join">
+            <column name="tipoSolcitud" />
         </many-to-one>
         <property name="fechaCrecion" type="java.util.Date" not-null="false">
-            <column name="FECHACRECION" />
+            <column name="fechaCreacion" />
         </property>
         <property name="descripcion" type="java.lang.String" length="300" not-null="false">
-            <column name="DESCRIPCION" />
+            <column name="descripcion" />
         </property>
         <property name="correo" type="java.lang.String" length="45" not-null="false">
-            <column name="CORREO" />
+            <column name="correo" />
         </property>
-        <property name="productoServicio" type="java.lang.String" length="45" not-null="false">
-            <column name="PRODUCTOSERVICIO" />
-        </property>
-        <many-to-one name="factura" class="co.edu.udea.iw.dto.Factura" fetch="join" lazy="false">
-            <column name="FACTURA" />
+        <many-to-one name="motivo" class="co.edu.udea.iw.dto.Motivo" fetch="join" not-null="false">
+            <column name="motivo" />
         </many-to-one>
-        <many-to-one name="filial" class="co.edu.udea.iw.dto.Filial" fetch="join" lazy="false" not-null="false">
-            <column name="FILIAL" />
+        <many-to-one name="factura" class="co.edu.udea.iw.dto.Factura" fetch="join">
+            <column name="factura" />
         </many-to-one>
-        <many-to-one name="empleadoAsignado" class="co.edu.udea.iw.dto.Empleado" fetch="join" lazy="false" not-null="false">
-            <column name="EMPLEADOASIGNADO" />
+        <many-to-one name="filial" class="co.edu.udea.iw.dto.Filial" fetch="join" not-null="false">
+            <column name="filial" />
+        </many-to-one>
+        <many-to-one name="empleadoAsignado" class="co.edu.udea.iw.dto.Empleado" fetch="join" not-null="false">
+            <column name="empleadoAsignado" />
         </many-to-one>
         <property name="fechaAsignacion" type="java.util.Date" not-null="false">
-            <column name="FECHAASIGNACION" />
+            <column name="fechaAsignacion" />
         </property>
         <property name="respuesta" type="java.lang.String" length="300">
-            <column name="RESPUESTA" />
+            <column name="respuesta" />
         </property>
         <property name="fechaRespuesta" type="java.util.Date">
-            <column name="FECHARESPUESTA" />
+            <column name="fechaRespuesta" />
         </property>
         <property name="satisfaccion" type="int">
-            <column name="SATISFACCION" />
+            <column name="satisfaccion" />
         </property>
     </class>
 </hibernate-mapping>
