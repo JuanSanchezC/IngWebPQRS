@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 01-May-2017 07:36:50 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="co.edu.udea.iw.dto.Empleado" table="EMPLEADO">
+    <class name="co.edu.udea.iw.dto.Empleado" table="empleado">
         <id name="id" type="int">
             <column name="ID" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="java.lang.String" length="45" not-null="true">
-            <column name="NOMBRE" />
+            <column name="nombre" />
         </property>
         <many-to-one name="tipoEmpleado" class="co.edu.udea.iw.dto.TipoEmpleado" fetch="join" lazy="false">
-            <column name="TIPOEMPLEADO" />
+            <column name="tipoEmpleado" />
         </many-to-one>
     </class>
 </hibernate-mapping>

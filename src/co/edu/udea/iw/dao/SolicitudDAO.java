@@ -16,7 +16,7 @@ public interface SolicitudDAO {
 	 * @throws ExceptionHandler manage the error occurred when it insert a
 	 * new entry for the table solicitud
 	 */
-	public void createSolicitud(Solicitud solicitud) throws ExceptionHandler;
+	public Boolean createSolicitud(Solicitud solicitud) throws ExceptionHandler;
 	
 	/**
 	 * Gets a Solicitud object according to an id
