@@ -16,7 +16,7 @@ public interface SolicitudDAO {
 	 * @throws ExceptionHandler manage the error occurred when it insert a
 	 * new entry for the table solicitud
 	 */
-	public Boolean createSolicitud(Solicitud solicitud) throws ExceptionHandler;
+	public void createSolicitud(Solicitud solicitud) throws ExceptionHandler;
 	
 	/**
 	 * Gets a Solicitud object according to an id
@@ -24,7 +24,7 @@ public interface SolicitudDAO {
 	 * @return Solicitud object 
 	 * @throws ExceptionHandler manage the error occurred when it consult the solicitud 
 	 */
-	public Solicitud getById(String id) throws ExceptionHandler;
+	public Solicitud getById(int id) throws ExceptionHandler;
 	
 	/**
 	 * gets an object list of type solicitud according to the id of an empleado

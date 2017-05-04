@@ -4,6 +4,7 @@ package co.edu.udea.iw.dao.imp;
 import static org.junit.Assert.*;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,8 +50,7 @@ public class SolicitudDAOImpTest {
 			motivo.setId(2);
 			
 			solicitud = new Solicitud();
-			solicitud.setId(1);
-			solicitud.setFechaCrecion(new Date());
+			solicitud.setFechaCreacion(new Date());
 			solicitud.setDescripcion("Me tienen mamado!!");
 			solicitud.setCorreo("juatoco@udea.edu.co");
 			solicitud.setFilial(filial);
@@ -59,7 +59,57 @@ public class SolicitudDAOImpTest {
 			solicitud.setMotivo(motivo);
 			solicitud.setFechaAsignacion(new Date());			
 			
-			assertTrue(solicitudDAO.createSolicitud(solicitud));
+			solicitudDAO.createSolicitud(solicitud);
+			assertTrue(true);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testGetById(){
+		Solicitud solicitud = null;
+		try {
+			solicitud = solicitudDAO.getById(2);
+			assertTrue(solicitud != null);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testGetByEmpleado(){
+		List<Solicitud> solicitudes = null;		
+		try {
+			solicitudes = solicitudDAO.getByEmpleado(1);
+			assertTrue(solicitudes.size() >= 1);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testGetAll(){
+		List<Solicitud> solicitudes = null;		
+		try {
+			solicitudes = solicitudDAO.getALL();
+			assertTrue(solicitudes.size() >= 1);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testUpdateSolicitud(){		
+		try {
+			Solicitud solicitud = solicitudDAO.getById(2);
+			solicitud.setRespuesta("Coma mierda!!");
+			solicitudDAO.updateSolicitud(solicitud);
+			assertTrue(true);
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
 			fail(e.getMessage());

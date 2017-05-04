@@ -9,7 +9,7 @@ import java.util.Date;
 public class Solicitud {
 	private int id;
 	private TipoSolicitud tipoSolicitud;
-	private Date fechaCrecion;
+	private Date fechaCreacion;
 	private String descripcion;
 	private String correo;
 	private Motivo motivo;	
@@ -33,11 +33,11 @@ public class Solicitud {
 	public void setTipoSolicitud(TipoSolicitud tipoSolicitud) {
 		this.tipoSolicitud = tipoSolicitud;
 	}
-	public Date getFechaCrecion() {
-		return fechaCrecion;
+	public Date getFechaCreacion() {
+		return fechaCreacion;
 	}
-	public void setFechaCrecion(Date fechaCrecion) {
-		this.fechaCrecion = fechaCrecion;
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 	public String getDescripcion() {
 		return descripcion;

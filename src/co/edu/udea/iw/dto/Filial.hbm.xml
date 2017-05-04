@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="assigned" />
         </id>
-        <property name="nombre" type="java.lang.String" length="45" not-null="true">
+        <property name="nombre" type="java.lang.String" length="45" not-null="false">
             <column name="nombre" />
         </property>
-        <property name="codigo" type="java.lang.String" length="10" not-null="true">
+        <property name="codigo" type="java.lang.String" length="10" not-null="false">
             <column name="codigo" />
         </property>
     </class>

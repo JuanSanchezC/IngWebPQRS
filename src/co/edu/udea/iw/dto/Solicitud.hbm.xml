@@ -6,12 +6,12 @@
     <class name="co.edu.udea.iw.dto.Solicitud" table="solicitud">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
-        <many-to-one name="tipoSolicitud" class="co.edu.udea.iw.dto.TipoSolicitud" fetch="join">
-            <column name="tipoSolcitud" />
+        <many-to-one name="tipoSolicitud" class="co.edu.udea.iw.dto.TipoSolicitud" fetch="join" not-null="false">
+            <column name="tipoSolicitud" />
         </many-to-one>
-        <property name="fechaCrecion" type="java.util.Date" not-null="false">
+        <property name="fechaCreacion" type="java.util.Date" not-null="false">
             <column name="fechaCreacion" />
         </property>
         <property name="descripcion" type="java.lang.String" length="300" not-null="false">
