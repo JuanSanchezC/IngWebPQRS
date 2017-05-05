@@ -6,7 +6,7 @@ import co.edu.udea.iw.dto.Solicitud;
 import co.edu.udea.iw.exception.ExceptionHandler;
 
 /**
- * Defines all the methods allowed over objects solicitud
+ * Defines all the methods allowed over entity solicitud
  * @author juan.sanchezc@udea.edu.co
  */
 public interface SolicitudDAO {
