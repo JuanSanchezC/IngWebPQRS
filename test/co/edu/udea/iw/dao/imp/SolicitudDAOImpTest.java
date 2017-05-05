@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,13 @@ import co.edu.udea.iw.dto.Motivo;
 import co.edu.udea.iw.dto.Solicitud;
 import co.edu.udea.iw.dto.TipoSolicitud;
 import co.edu.udea.iw.exception.ExceptionHandler;
+import co.edu.udea.iw.logs.CustomLogger;
+
 
 /**
  * Implements test fot the implementation of SolicitudDAO
  * @author juan.sanchezc@udea.edu.co
+ * @author oran.jimenez@udea.edu.co
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
@@ -31,7 +35,8 @@ import co.edu.udea.iw.exception.ExceptionHandler;
 public class SolicitudDAOImpTest {
 	@Autowired
 	SolicitudDAO solicitudDAO;
-
+	private Logger logger = CustomLogger.getLogger();
+	private Logger log = Logger.getLogger(SolicitudDAOImpTest.class);
 	/**
 	 * Test for the method createSolicitud() of SolicitudDAOImp 
 	 */
@@ -42,6 +47,9 @@ public class SolicitudDAOImpTest {
 		Filial filial = null;
 		TipoSolicitud tipoSolicitud = null;
 		Motivo motivo = null;
+		
+		
+				
 		try {
 			empleadoAsignado = new Empleado();
 			filial = new Filial();
@@ -65,8 +73,13 @@ public class SolicitudDAOImpTest {
 			
 			solicitudDAO.createSolicitud(solicitud);
 			assertTrue(true);
+			logger.info("Crea una solicitud satisfactoriamente");
+			logger.error("Crea una solicitud satisfactoriamente");
+			log.error("esto si funciona");
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
+			e.printLog();
+			log.error("esto no funciona");
 			fail(e.getMessage());
 		}
 	}
@@ -78,10 +91,12 @@ public class SolicitudDAOImpTest {
 	public void testGetById(){
 		Solicitud solicitud = null;
 		try {
-			solicitud = solicitudDAO.getById(2);
+			solicitud = solicitudDAO.getById(10);
 			assertTrue(solicitud != null);
+			logger.info("se ha obtenido una solicitud por su id");
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
+			e.printLog();
 			fail(e.getMessage());
 		}
 	}
@@ -95,8 +110,10 @@ public class SolicitudDAOImpTest {
 		try {
 			solicitudes = solicitudDAO.getByEmpleado(1);
 			assertTrue(solicitudes.size() >= 1);
+			logger.info("se ha obtenido una solicitud por empleado");
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
+			e.printLog();
 			fail(e.getMessage());
 		}
 	}
@@ -110,8 +127,10 @@ public class SolicitudDAOImpTest {
 		try {
 			solicitudes = solicitudDAO.getALL();
 			assertTrue(solicitudes.size() >= 1);
+			logger.info("se han obtenido todas las solicitudes");
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
+			e.printLog();
 			fail(e.getMessage());
 		}
 	}
@@ -126,8 +145,10 @@ public class SolicitudDAOImpTest {
 			solicitud.setRespuesta("Coma mierda!!");
 			solicitudDAO.updateSolicitud(solicitud);
 			assertTrue(true);
+			logger.info("se ha actualizado la solicitud " + 2);
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
+			e.printLog();
 			fail(e.getMessage());
 		}
 	}
