@@ -14,6 +14,9 @@
         <property name="fechaCreacion" type="java.util.Date" not-null="false">
             <column name="fechaCreacion" />
         </property>
+        <property name="fechaSuceso" type="java.util.Date" not-null="false">
+            <column name="fechaSuceso" />
+        </property>
         <property name="descripcion" type="java.lang.String" length="300" not-null="false">
             <column name="descripcion" />
         </property>

@@ -10,6 +10,7 @@ public class Solicitud {
 	private int id;
 	private TipoSolicitud tipoSolicitud;
 	private Date fechaCreacion;
+	private Date fechaSuceso;
 	private String descripcion;
 	private String correo;
 	private Motivo motivo;	
@@ -38,6 +39,12 @@ public class Solicitud {
 	}
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
+	}
+	public Date getFechaSuceso() {
+		return fechaSuceso;
+	}
+	public void setFechaSuceso(Date fechaSuceso) {
+		this.fechaSuceso = fechaSuceso;
 	}
 	public String getDescripcion() {
 		return descripcion;

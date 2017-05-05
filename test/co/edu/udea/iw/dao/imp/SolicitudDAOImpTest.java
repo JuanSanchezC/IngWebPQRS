@@ -32,7 +32,10 @@ public class SolicitudDAOImpTest {
 	@Autowired
 	SolicitudDAO solicitudDAO;
 
-	@Test
+	/**
+	 * Test for the method createSolicitud() of SolicitudDAOImp 
+	 */
+	@Test	
 	public void testCreateSolicitud() {
 		Solicitud solicitud = null;
 		Empleado empleadoAsignado = null;
@@ -51,6 +54,7 @@ public class SolicitudDAOImpTest {
 			
 			solicitud = new Solicitud();
 			solicitud.setFechaCreacion(new Date());
+			solicitud.setFechaSuceso(new Date());
 			solicitud.setDescripcion("Me tienen mamado!!");
 			solicitud.setCorreo("juatoco@udea.edu.co");
 			solicitud.setFilial(filial);
@@ -67,6 +71,9 @@ public class SolicitudDAOImpTest {
 		}
 	}
 	
+	/**
+	 * Test for the method getById() of SolicitudDAOImp
+	 */
 	@Test
 	public void testGetById(){
 		Solicitud solicitud = null;
@@ -79,6 +86,9 @@ public class SolicitudDAOImpTest {
 		}
 	}
 	
+	/**
+	 * Test for the method getByEmpleado() of SolicitudDAOImp
+	 */
 	@Test
 	public void testGetByEmpleado(){
 		List<Solicitud> solicitudes = null;		
@@ -91,6 +101,9 @@ public class SolicitudDAOImpTest {
 		}
 	}
 	
+	/**
+	 * Test for the method getAll() of SolicitudDAOImp
+	 */
 	@Test
 	public void testGetAll(){
 		List<Solicitud> solicitudes = null;		
@@ -103,6 +116,9 @@ public class SolicitudDAOImpTest {
 		}
 	}
 	
+	/**
+	 * Test for the method updateSolicitud() of SolicitudDAOImp
+	 */
 	@Test
 	public void testUpdateSolicitud(){		
 		try {
