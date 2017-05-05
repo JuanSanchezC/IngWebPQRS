@@ -9,10 +9,11 @@ import java.util.Date;
 public class Solicitud {
 	private int id;
 	private TipoSolicitud tipoSolicitud;
-	private Date fechaCrecion;
+	private Date fechaCreacion;
+	private Date fechaSuceso;
 	private String descripcion;
 	private String correo;
-	private String productoServicio;
+	private Motivo motivo;	
 	private Factura factura;
 	private Filial filial;
 	private Empleado empleadoAsignado;
@@ -33,11 +34,17 @@ public class Solicitud {
 	public void setTipoSolicitud(TipoSolicitud tipoSolicitud) {
 		this.tipoSolicitud = tipoSolicitud;
 	}
-	public Date getFechaCrecion() {
-		return fechaCrecion;
+	public Date getFechaCreacion() {
+		return fechaCreacion;
 	}
-	public void setFechaCrecion(Date fechaCrecion) {
-		this.fechaCrecion = fechaCrecion;
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+	public Date getFechaSuceso() {
+		return fechaSuceso;
+	}
+	public void setFechaSuceso(Date fechaSuceso) {
+		this.fechaSuceso = fechaSuceso;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -51,11 +58,11 @@ public class Solicitud {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public String getProductoServicio() {
-		return productoServicio;
+	public Motivo getMotivo() {
+		return motivo;
 	}
-	public void setProductoServicio(String productoServicio) {
-		this.productoServicio = productoServicio;
+	public void setMotivo(Motivo motivo) {
+		this.motivo = motivo;
 	}
 	public Factura getFactura() {
 		return factura;

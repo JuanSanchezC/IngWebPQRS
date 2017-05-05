@@ -1,5 +1,6 @@
 package co.edu.udea.iw.dao.imp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -9,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
 import co.edu.udea.iw.dao.SolicitudDAO;
+import co.edu.udea.iw.dto.Empleado;
 import co.edu.udea.iw.dto.Solicitud;
 import co.edu.udea.iw.exception.ExceptionHandler;
 
@@ -35,22 +37,18 @@ public class SolicitudDAOImp implements SolicitudDAO{
 	}
 
 	@Override
-	public Boolean createSolicitud(Solicitud solicitud) throws ExceptionHandler {
-		Boolean noError = false;
+	public void createSolicitud(Solicitud solicitud) throws ExceptionHandler {
 		Session session = null;
 		try {
 			session = sessionFactory.getCurrentSession();
 			session.save(solicitud);
-			noError = true;
-			
 		} catch (HibernateException e) {
 			throw new ExceptionHandler("Error inserting a new solicitud", e);
-		}
-		return noError;
+		}		
 	}
 
 	@Override
-	public Solicitud getById(String id) throws ExceptionHandler {
+	public Solicitud getById(int id) throws ExceptionHandler {
 		Session session = null;
 		Solicitud solicitud = null;
 		try {
@@ -65,11 +63,14 @@ public class SolicitudDAOImp implements SolicitudDAO{
 	@Override
 	public List<Solicitud> getByEmpleado(int id) throws ExceptionHandler {
 		Session session = null;
-		List<Solicitud> solicitudList = null;
+		List<Solicitud> solicitudList = new ArrayList<Solicitud>();
+		Criteria criteria = null;
+		Empleado empleado = new Empleado();
+		empleado.setId(id);
 		try {
 			session = sessionFactory.getCurrentSession();
-			Criteria criteria = session.createCriteria(Solicitud.class).add(Restrictions.like("empleadoAsignado", id));
-			solicitudList = criteria.list();
+			criteria = session.createCriteria(Solicitud.class).add(Restrictions.eq("empleadoAsignado", empleado));
+			solicitudList =  criteria.list();
 		} catch (HibernateException e) {
 			throw new ExceptionHandler("Error getting solicitud list by id empleado", e);
 		}
@@ -79,10 +80,11 @@ public class SolicitudDAOImp implements SolicitudDAO{
 	@Override
 	public List<Solicitud> getALL() throws ExceptionHandler {
 		Session session = null;
-		List<Solicitud> solicitudList = null;
+		List<Solicitud> solicitudList = new ArrayList<Solicitud>();
+		Criteria criteria = null;
 		try {
 			session = sessionFactory.getCurrentSession();
-			Criteria criteria = session.createCriteria(Solicitud.class);
+			criteria = session.createCriteria(Solicitud.class);
 			solicitudList = criteria.list();
 		} catch (HibernateException e) {
 			throw new ExceptionHandler("Error getting all solicitud list", e);
@@ -95,7 +97,7 @@ public class SolicitudDAOImp implements SolicitudDAO{
 		Session session = null;
 		try {
 			session = sessionFactory.getCurrentSession();
-			session.update(solicitud);
+			session.saveOrUpdate(solicitud);
 			
 		} catch (HibernateException e) {
 			throw new ExceptionHandler("Error updating the solicitud", e);

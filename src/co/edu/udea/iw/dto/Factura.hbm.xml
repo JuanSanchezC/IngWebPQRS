@@ -5,14 +5,14 @@
 <hibernate-mapping>
     <class name="co.edu.udea.iw.dto.Factura" table="factura">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
-        <property name="fechaVenta" type="java.util.Date" not-null="true">
-            <column name="FECHAVENTA" />
+        <property name="fechaVenta" type="java.util.Date" not-null="false">
+            <column name="fechaVenta" />
         </property>
         <many-to-one name="filial" class="co.edu.udea.iw.dto.Filial" fetch="join" lazy="false">
-            <column name="FILIAL" />
+            <column name="filial" />
         </many-to-one>
     </class>
 </hibernate-mapping>

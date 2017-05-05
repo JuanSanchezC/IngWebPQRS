@@ -5,11 +5,17 @@
 <hibernate-mapping>
     <class name="co.edu.udea.iw.dto.Empleado" table="empleado">
         <id name="id" type="int">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="id" />
+            <generator class="native" />
         </id>
-        <property name="nombre" type="java.lang.String" length="45" not-null="true">
-            <column name="nombre" />
+        <property name="nombres" type="java.lang.String" length="45" not-null="false">
+            <column name="nombres" />
+        </property>
+        <property name="apellidos" type="java.lang.String" length="45" not-null="false">
+            <column name="apellidos" />
+        </property>
+        <property name="correo" type="java.lang.String" length="45" not-null="false">
+            <column name="correo" />
         </property>
         <many-to-one name="tipoEmpleado" class="co.edu.udea.iw.dto.TipoEmpleado" fetch="join" lazy="false">
             <column name="tipoEmpleado" />
