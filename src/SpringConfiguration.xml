@@ -42,5 +42,24 @@
 	<bean id="solicitudDAO" class="co.edu.udea.iw.dao.imp.SolicitudDAOImp">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="motivoDAO" class="co.edu.udea.iw.dao.imp.MotivoDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="filialDAO" class="co.edu.udea.iw.dao.imp.FilialDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="tipoSolicitudDAO" class="co.edu.udea.iw.dao.imp.TipoSolicitudDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="facturaDAO" class="co.edu.udea.iw.dao.imp.FacturaDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="solicitudBL" class="co.edu.udea.iw.bl.SolicitudBL">
+		<property name="solicitudDAO" ref="solicitudDAO"/>
+		<property name="motivoDAO" ref="motivoDAO"/>
+		<property name="filialDAO" ref="filialDAO"/>
+		<property name="tipoSolicitudDAO" ref="tipoSolicitudDAO"/>
+		<property name="facturaDAO" ref="facturaDAO"/>
+	</bean>
 	<tx:annotation-driven/>
 </beans>
