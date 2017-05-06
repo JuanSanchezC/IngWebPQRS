@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import co.edu.udea.iw.exception.ExceptionHandler;
 
 /**
- * Test methods for SolicitudBL
+ * Test methods for {@link SolicitudBL}
  * @author juan.sanchezc@udea.edu.co
  * @author oran.jimenez@udea.edu.co
  */
@@ -29,7 +29,7 @@ public class SolicitudBLTest {
 	SolicitudBL solicitudBL;
 
 	/**
-	 * Test method for {@link co.edu.udea.iw.bl.SolicitudBL#createSolicitud(java.lang.String, java.util.Date, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for {@link SolicitudBL#createSolicitud(java.lang.String, java.util.Date, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void testCreateSolicitud() {
@@ -43,6 +43,9 @@ public class SolicitudBLTest {
 		}
 	}
 	
+	/**
+	 * Test method for {@link SolicitudBL#sendEmail(int)}
+	 */
 	@Test
 	public void testSendEmail(){
 		try {
@@ -53,5 +56,7 @@ public class SolicitudBLTest {
 			fail(e.getMessage());
 		}
 	}
+	
+	
 
 }

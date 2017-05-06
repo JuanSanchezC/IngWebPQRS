@@ -92,7 +92,7 @@ public class SolicitudDAOImpTest {
 	public void testGetById(){
 		Solicitud solicitud = null;
 		try {
-			solicitud = solicitudDAO.getById(10);
+			solicitud = solicitudDAO.getById(3);
 			assertTrue(solicitud != null);
 			logger.info("se ha obtenido una solicitud por su id");
 		} catch (ExceptionHandler e) {
@@ -170,8 +170,8 @@ public class SolicitudDAOImpTest {
 	@Test
 	public void testGetByDateRange(){
 		String nameDate = "fechaCreacion";		
-		Date initDate = new GregorianCalendar(2017, 5, 4, 0, 0, 0).getTime();
-		Date finDate = new GregorianCalendar(2017, 5, 5, 0, 0, 0).getTime();
+		Date initDate = new GregorianCalendar(2017, 4, 4, 0, 0, 0).getTime();
+		Date finDate = new GregorianCalendar(2017, 4, 5, 0, 0, 0).getTime();
 		try {
 			List<Solicitud> solicitudes = solicitudDAO.getByDateRange(initDate, finDate, nameDate);
 			assertTrue(solicitudes.size() > 0);
@@ -186,8 +186,8 @@ public class SolicitudDAOImpTest {
 	 */
 	@Test
 	public void testGetByDateRangeAnswered(){
-		Date initDate = new GregorianCalendar(2017, 5, 4, 0, 0, 0).getTime();
-		Date finDate = new GregorianCalendar(2017, 5, 5, 0, 0, 0).getTime();
+		Date initDate = new GregorianCalendar(2017, 4, 4, 0, 0, 0).getTime();
+		Date finDate = new GregorianCalendar(2017, 4, 9, 0, 0, 0).getTime();
 		try {
 			List<Solicitud> solicitudes = solicitudDAO.getByDateRangeAnswered(initDate, finDate);
 			assertTrue(solicitudes.size() > 0);

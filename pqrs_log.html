@@ -474,3 +474,391 @@ Log session start time Fri May 05 17:31:30 COT 2017<br>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
 </td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sat May 06 10:03:37 COT 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>5042</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">ERROR CONSULTING LIST OF SOLICITUD</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.hibernate.MappingException: Property path [co.edu.udea.iw.dto.Solicitud.respuesta] does not reference a collection
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.getQueryableCollection(AbstractEmptinessExpression.java:84)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.toSqlString(AbstractEmptinessExpression.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.LogicalExpression.toSqlString(LogicalExpression.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getWhereCondition(CriteriaQueryTranslator.java:380)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaLoader.&lt;init&gt;(CriteriaLoader.java:92)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1697)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.CriteriaImpl.list(CriteriaImpl.java:347)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImp.getByDateRangeAnswered(SolicitudDAOImp.java:170)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImpTest.testGetByDateRangeAnswered(SolicitudDAOImpTest.java:192)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Method.java:498)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:224)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+</td></tr>
+
+<tr>
+<td>5289</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">ERROR CONSULTING LIST OF SOLICITUD</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.hibernate.MappingException: Property path [co.edu.udea.iw.dto.Solicitud.respuesta] does not reference a collection
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.getQueryableCollection(AbstractEmptinessExpression.java:84)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.toSqlString(AbstractEmptinessExpression.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.LogicalExpression.toSqlString(LogicalExpression.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getWhereCondition(CriteriaQueryTranslator.java:380)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaLoader.&lt;init&gt;(CriteriaLoader.java:92)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1697)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.CriteriaImpl.list(CriteriaImpl.java:347)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImp.getByAnswered(SolicitudDAOImp.java:137)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImpTest.testGetByAnswered(SolicitudDAOImpTest.java:159)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Method.java:498)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:224)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+</td></tr>
+
+<tr>
+<td>5818</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha actualizado la solicitud 2</td>
+</tr>
+
+<tr>
+<td>6005</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha obtenido una solicitud por empleado</td>
+</tr>
+
+<tr>
+<td>6065</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">ERROR CONSULTING LIST OF SOLICITUD</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.hibernate.MappingException: Property path [co.edu.udea.iw.dto.Solicitud.respuesta] does not reference a collection
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.getQueryableCollection(AbstractEmptinessExpression.java:84)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.toSqlString(AbstractEmptinessExpression.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.LogicalExpression.toSqlString(LogicalExpression.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getWhereCondition(CriteriaQueryTranslator.java:380)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaLoader.&lt;init&gt;(CriteriaLoader.java:92)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1697)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.CriteriaImpl.list(CriteriaImpl.java:347)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImp.getByNoAnswered(SolicitudDAOImp.java:120)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImpTest.testGetByNoAnswered(SolicitudDAOImpTest.java:145)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Method.java:498)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:224)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+</td></tr>
+
+<tr>
+<td>6257</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">Crea una solicitud satisfactoriamente</td>
+</tr>
+
+<tr>
+<td>6264</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">Crea una solicitud satisfactoriamente</td>
+</tr>
+
+<tr>
+<td>6441</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se han obtenido todas las solicitudes</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sat May 06 10:06:22 COT 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>4229</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha obtenido una solicitud por su id</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sat May 06 10:06:52 COT 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>3950</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">ERROR CONSULTING LIST OF SOLICITUD</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.hibernate.MappingException: Property path [co.edu.udea.iw.dto.Solicitud.respuesta] does not reference a collection
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.getQueryableCollection(AbstractEmptinessExpression.java:84)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.AbstractEmptinessExpression.toSqlString(AbstractEmptinessExpression.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.criterion.LogicalExpression.toSqlString(LogicalExpression.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getWhereCondition(CriteriaQueryTranslator.java:380)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaJoinWalker.&lt;init&gt;(CriteriaJoinWalker.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.loader.criteria.CriteriaLoader.&lt;init&gt;(CriteriaLoader.java:92)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1697)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.hibernate.impl.CriteriaImpl.list(CriteriaImpl.java:347)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImp.getByAnswered(SolicitudDAOImp.java:137)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at co.edu.udea.iw.dao.imp.SolicitudDAOImpTest.testGetByAnswered(SolicitudDAOImpTest.java:159)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Method.java:498)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:82)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:224)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sat May 06 10:43:24 COT 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>6806</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha obtenido una solicitud por su id</td>
+</tr>
+
+<tr>
+<td>6930</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha actualizado la solicitud 2</td>
+</tr>
+
+<tr>
+<td>7003</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se ha obtenido una solicitud por empleado</td>
+</tr>
+
+<tr>
+<td>7290</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">Crea una solicitud satisfactoriamente</td>
+</tr>
+
+<tr>
+<td>7290</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">Crea una solicitud satisfactoriamente</td>
+</tr>
+
+<tr>
+<td>7510</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="customLogger category">customLogger</td>
+<td title="Message">se han obtenido todas las solicitudes</td>
+</tr>

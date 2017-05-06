@@ -115,7 +115,7 @@ public class SolicitudDAOImp implements SolicitudDAO{
 		try {
 			session = sessionFactory.getCurrentSession();
 			Criterion criterion1 = Restrictions.isNull("respuesta");
-			Criterion criterion2 = Restrictions.isEmpty("respuesta");
+			Criterion criterion2 = Restrictions.eq("respuesta", "");
 			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2));
 			soList = criteria.list();
 		} catch (HibernateException e) {
@@ -132,7 +132,7 @@ public class SolicitudDAOImp implements SolicitudDAO{
 		try {
 			session = sessionFactory.getCurrentSession();
 			Criterion criterion1 = Restrictions.isNotNull("respuesta");
-			Criterion criterion2 = Restrictions.isNotEmpty("respuesta");
+			Criterion criterion2 = Restrictions.ne("respuesta","");
 			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2));
 			soList = criteria.list();
 		} catch (HibernateException e) {
@@ -164,7 +164,7 @@ public class SolicitudDAOImp implements SolicitudDAO{
 		try {
 			session = sessionFactory.getCurrentSession();
 			Criterion criterion1 = Restrictions.isNotNull("respuesta");
-			Criterion criterion2 = Restrictions.isNotEmpty("respuesta");
+			Criterion criterion2 = Restrictions.ne("respuesta", "");
 			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2)).
 					add(Restrictions.between("fechaRespuesta", initDate, finDate));
 			soList = criteria.list();
