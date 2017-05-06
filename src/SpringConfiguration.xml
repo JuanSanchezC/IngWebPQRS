@@ -54,6 +54,9 @@
 	<bean id="facturaDAO" class="co.edu.udea.iw.dao.imp.FacturaDAOImp">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="empleadoDAO" class="co.edu.udea.iw.dao.imp.EmpleadoDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<bean id="solicitudBL" class="co.edu.udea.iw.bl.SolicitudBL">
 		<property name="solicitudDAO" ref="solicitudDAO"/>
 		<property name="motivoDAO" ref="motivoDAO"/>

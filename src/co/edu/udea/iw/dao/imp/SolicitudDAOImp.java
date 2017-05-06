@@ -1,12 +1,14 @@
 package co.edu.udea.iw.dao.imp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import co.edu.udea.iw.dao.SolicitudDAO;
@@ -103,6 +105,73 @@ public class SolicitudDAOImp implements SolicitudDAO{
 			throw new ExceptionHandler("Error updating the solicitud", e);
 		}
 		
+	}
+
+	@Override
+	public List<Solicitud> getByNoAnswered() throws ExceptionHandler {
+		Session session = null;
+		Criteria criteria = null;
+		List<Solicitud> soList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			Criterion criterion1 = Restrictions.isNull("respuesta");
+			Criterion criterion2 = Restrictions.isEmpty("respuesta");
+			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2));
+			soList = criteria.list();
+		} catch (HibernateException e) {
+			throw new ExceptionHandler("ERROR CONSULTING LIST OF SOLICITUD", e);
+		}
+		return soList;
+	}
+
+	@Override
+	public List<Solicitud> getByAnswered() throws ExceptionHandler {
+		Session session = null;
+		Criteria criteria = null;
+		List<Solicitud> soList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			Criterion criterion1 = Restrictions.isNotNull("respuesta");
+			Criterion criterion2 = Restrictions.isNotEmpty("respuesta");
+			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2));
+			soList = criteria.list();
+		} catch (HibernateException e) {
+			throw new ExceptionHandler("ERROR CONSULTING LIST OF SOLICITUD", e);
+		}
+		return soList;
+	}
+
+	@Override
+	public List<Solicitud> getByDateRange(Date initDate, Date finDate, String nameDate) throws ExceptionHandler {
+		Session session = null;
+		Criteria criteria = null;
+		List<Solicitud> soList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			criteria = session.createCriteria(Solicitud.class).add(Restrictions.between(nameDate, initDate, finDate));
+			soList = criteria.list();
+		} catch (HibernateException e) {
+			throw new ExceptionHandler("ERROR CONSULTING LIST OF SOLICITUD", e);
+		}
+		return soList;
+	}
+
+	@Override
+	public List<Solicitud> getByDateRangeAnswered(Date initDate, Date finDate) throws ExceptionHandler {
+		Session session = null;
+		Criteria criteria = null;
+		List<Solicitud> soList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			Criterion criterion1 = Restrictions.isNotNull("respuesta");
+			Criterion criterion2 = Restrictions.isNotEmpty("respuesta");
+			criteria = session.createCriteria(Solicitud.class).add(Restrictions.or(criterion1, criterion2)).
+					add(Restrictions.between("fechaRespuesta", initDate, finDate));
+			soList = criteria.list();
+		} catch (HibernateException e) {
+			throw new ExceptionHandler("ERROR CONSULTING LIST OF SOLICITUD", e);
+		}
+		return soList;
 	}
 
 }

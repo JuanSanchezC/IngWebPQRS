@@ -4,6 +4,7 @@ package co.edu.udea.iw.dao.imp;
 import static org.junit.Assert.*;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -25,7 +26,7 @@ import co.edu.udea.iw.logs.CustomLogger;
 
 
 /**
- * Implements test fot the implementation of SolicitudDAO
+ * Implements test for {@link SolicitudDAOImp}
  * @author juan.sanchezc@udea.edu.co
  * @author oran.jimenez@udea.edu.co
  */
@@ -38,7 +39,7 @@ public class SolicitudDAOImpTest {
 	private Logger logger = CustomLogger.getLogger();
 	private Logger log = Logger.getLogger(SolicitudDAOImpTest.class);
 	/**
-	 * Test for the method createSolicitud() of SolicitudDAOImp 
+	 * Test for method {@link SolicitudDAOImp#createSolicitud(Solicitud)} 
 	 */
 	@Test	
 	public void testCreateSolicitud() {
@@ -85,7 +86,7 @@ public class SolicitudDAOImpTest {
 	}
 	
 	/**
-	 * Test for the method getById() of SolicitudDAOImp
+	 * Test for method {@link SolicitudDAOImp#getById(int)}
 	 */
 	@Test
 	public void testGetById(){
@@ -102,7 +103,7 @@ public class SolicitudDAOImpTest {
 	}
 	
 	/**
-	 * Test for the method getByEmpleado() of SolicitudDAOImp
+	 * Test for method {@link SolicitudDAOImp#getByEmpleado(int)} 
 	 */
 	@Test
 	public void testGetByEmpleado(){
@@ -119,7 +120,7 @@ public class SolicitudDAOImpTest {
 	}
 	
 	/**
-	 * Test for the method getAll() of SolicitudDAOImp
+	 * Test for method {@link SolicitudDAOImp#getALL()} 
 	 */
 	@Test
 	public void testGetAll(){
@@ -136,7 +137,68 @@ public class SolicitudDAOImpTest {
 	}
 	
 	/**
-	 * Test for the method updateSolicitud() of SolicitudDAOImp
+	 * Test for method {@link SolicitudDAOImp#getByNoAnswered()}
+	 */
+	@Test
+	public void testGetByNoAnswered(){
+		try {
+			List<Solicitud> solicitudes = solicitudDAO.getByNoAnswered();
+			assertTrue(solicitudes.size() > 0);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Test for method {@link SolicitudDAOImp#getByAnswered()}
+	 */
+	@Test
+	public void testGetByAnswered(){
+		try {
+			List<Solicitud> solicitudes = solicitudDAO.getByAnswered();
+			assertTrue(solicitudes.size() > 0);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Test for method {@link SolicitudDAOImp#getByDateRange(Date, Date, String)}
+	 */
+	@Test
+	public void testGetByDateRange(){
+		String nameDate = "fechaCreacion";		
+		Date initDate = new GregorianCalendar(2017, 5, 4, 0, 0, 0).getTime();
+		Date finDate = new GregorianCalendar(2017, 5, 5, 0, 0, 0).getTime();
+		try {
+			List<Solicitud> solicitudes = solicitudDAO.getByDateRange(initDate, finDate, nameDate);
+			assertTrue(solicitudes.size() > 0);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Test for method {@link SolicitudDAOImp#getByDateRangeAnswered(Date, Date)}
+	 */
+	@Test
+	public void testGetByDateRangeAnswered(){
+		Date initDate = new GregorianCalendar(2017, 5, 4, 0, 0, 0).getTime();
+		Date finDate = new GregorianCalendar(2017, 5, 5, 0, 0, 0).getTime();
+		try {
+			List<Solicitud> solicitudes = solicitudDAO.getByDateRangeAnswered(initDate, finDate);
+			assertTrue(solicitudes.size() > 0);
+		} catch (ExceptionHandler e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Test for the method {@link SolicitudDAOImp#updateSolicitud(Solicitud)}
 	 */
 	@Test
 	public void testUpdateSolicitud(){		

@@ -1,5 +1,6 @@
 package co.edu.udea.iw.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import co.edu.udea.iw.dto.Solicitud;
@@ -40,6 +41,39 @@ public interface SolicitudDAO {
 	 * @throws ExceptionHandler manage the error occurred when it consult the list
 	 */
 	public List<Solicitud> getALL() throws ExceptionHandler;
+	
+	/**
+	 * Gets the list of solicitud that has not been answered 
+	 * @return list of solicitud 
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByNoAnswered() throws ExceptionHandler;
+	
+	/**
+	 * Gets the list of solicitud that has been answered 
+	 * @return list of solicitud 
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByAnswered() throws ExceptionHandler;
+	
+	/**
+	 * Gets a list of solicitud given a date range and name of variable date
+	 * @param initDate initial date
+	 * @param finDate final date
+	 * @param nameDate name of variable date
+	 * @return a list of solicitud
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByDateRange(Date initDate, Date finDate, String nameDate) throws ExceptionHandler;
+	
+	/**
+	 * Gets a list of solicitud answered given a date range
+	 * @param initDate initial date
+	 * @param finDate final date
+	 * @return a list of solicitud
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByDateRangeAnswered(Date initDate, Date finDate) throws ExceptionHandler;
 	
 	/**
 	 * Updates a entry in the table solicitud according to the solicitud object

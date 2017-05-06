@@ -1,11 +1,9 @@
 /**
  * 
  */
-package co.edu.udea.iw.bl;
+package co.edu.udea.iw.dao.imp;
 
 import static org.junit.Assert.*;
-
-import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,40 +12,31 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.dao.EmpleadoDAO;
+import co.edu.udea.iw.dto.Empleado;
 import co.edu.udea.iw.exception.ExceptionHandler;
 
 /**
- * Test methods for SolicitudBL
+ * Tests for methods of {@link EmpleadoDAOImp}
  * @author juan.sanchezc@udea.edu.co
  * @author oran.jimenez@udea.edu.co
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @ContextConfiguration(locations="classpath:SpringConfiguration.xml")
-public class SolicitudBLTest {
+public class EmpleadoDAOImpTest {
 	@Autowired
-	SolicitudBL solicitudBL;
+	EmpleadoDAO empleadoDAO;
 
 	/**
-	 * Test method for {@link co.edu.udea.iw.bl.SolicitudBL#createSolicitud(java.lang.String, java.util.Date, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for {@link EmpleadoDAOImp#getById(int)}.
 	 */
 	@Test
-	public void testCreateSolicitud() {
+	public void testGetById() {
+		Empleado empleado = null;
 		try {
-			solicitudBL.createSolicitud("queja", new Date(), "centro", "devuelvanme la plata", 
-					"juan.algo@gamin.com", "ms", null);
-			assertTrue(true);
-		} catch (ExceptionHandler e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
-	}
-	
-	@Test
-	public void testSendEmail(){
-		try {
-			solicitudBL.sendEmail(1);
-			assertTrue(true);
+			empleado = empleadoDAO.getById(1);
+			assertTrue(empleado != null);
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
 			fail(e.getMessage());

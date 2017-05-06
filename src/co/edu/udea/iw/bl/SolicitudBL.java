@@ -1,11 +1,13 @@
 package co.edu.udea.iw.bl;
 
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.udea.iw.dao.EmpleadoDAO;
 import co.edu.udea.iw.dao.FacturaDAO;
 import co.edu.udea.iw.dao.FilialDAO;
 import co.edu.udea.iw.dao.MotivoDAO;
@@ -30,6 +32,7 @@ public class SolicitudBL {
 	private FilialDAO filialDAO;
 	private TipoSolicitudDAO tipoSolicitudDAO;
 	private FacturaDAO facturaDAO;
+	private EmpleadoDAO empleadoDAO;
 
 	/**
 	 * @return the motivoDAO
@@ -90,6 +93,18 @@ public class SolicitudBL {
 	 */
 	public void setSolicitudDAO(SolicitudDAO solicitudDAO) {
 		this.solicitudDAO = solicitudDAO;
+	}	
+	/**
+	 * @return the empleadoDAO
+	 */
+	public EmpleadoDAO getEmpleadoDAO() {
+		return empleadoDAO;
+	}
+	/**
+	 * @param empleadoDAO the empleadoDAO to set
+	 */
+	public void setEmpleadoDAO(EmpleadoDAO empleadoDAO) {
+		this.empleadoDAO = empleadoDAO;
 	}
 	
 	/**
@@ -174,6 +189,97 @@ public class SolicitudBL {
 	}
 	
 	/**
+	 * Gets a Solicitud object given an id
+	 * @param id
+	 * @return a Solcitud object
+	 * @throws ExceptionHandler manage error occurred consulting solicitud
+	 */
+	public Solicitud getById(int id) throws ExceptionHandler{
+		return solicitudDAO.getById(id);
+	}
+	
+	/**
+	 * Gets a list of solicitud given an empleado id
+	 * @param idEmpleado identification of an empleado
+	 * @return list of solicitudes
+	 * @throws ExceptionHandler manage the error occurred consulting solicitud
+	 */
+	public List<Solicitud> getByEmpleado(int idEmpleado) throws ExceptionHandler{
+		return solicitudDAO.getByEmpleado(idEmpleado);
+	}
+	
+	/**
+	 * Makes a response for a solicitud
+	 * @param id identification of a solicitud
+	 * @param respuesta response to make
+	 * @throws ExceptionHandler manage the error occurred updating a solicitud
+	 */
+	public void makeRespuesta(int id, String respuesta) throws ExceptionHandler{
+		Solicitud solicitud = solicitudDAO.getById(id);
+		solicitud.setRespuesta(respuesta);
+		solicitudDAO.updateSolicitud(solicitud);
+		sendEmail(id);
+	}
+	
+	/**
+	 * Asigns a Solicitud to an Empleado
+	 * @param id identification of Solicitud
+	 * @param idEmpleado identification of Empleado
+	 * @throws ExceptionHandler manage the error occurred updating the Solicitud
+	 */
+	public void asignSolicitud(int id, int idEmpleado) throws ExceptionHandler{
+		Solicitud solicitud = solicitudDAO.getById(id);
+		Empleado empleadoAsignado = empleadoDAO.getById(idEmpleado);
+		solicitud.setEmpleadoAsignado(empleadoAsignado);
+		solicitudDAO.updateSolicitud(solicitud);		
+	}
+	
+	/**
+	 * Send a message to email associated to a solicitud 
+	 * @param id identification of a solicitud
+	 * @throws ExceptionHandler manage the error occurred sending an email
+	 */
+	public void sendEmail(int id) throws ExceptionHandler{
+		Solicitud solicitud = solicitudDAO.getById(id);
+		//String correo = solicitud.getCorreo();
+		String correo = "estudianteingwebudea@gmail.com";
+		String respuesta = solicitud.getRespuesta();
+		String content = construcRespuesta(id, respuesta);
+		SendMailTLS sender = new SendMailTLS();
+		sender.sendEmail(correo, content);
+	}
+	
+	/**
+	 * Sets the satisfaccion of a solicitud
+	 * @param id identificacion of a solicitud
+	 * @param satisfaccion satisfaccion qualification to set
+	 * @throws ExceptionHandler manage the error occurred updating the solicitud
+	 */
+	public void setSatisfaccion(int id, int satisfaccion) throws ExceptionHandler{
+		Solicitud solicitud = solicitudDAO.getById(id);
+		solicitud.setSatisfaccion(satisfaccion);
+		solicitudDAO.updateSolicitud(solicitud);
+	}
+	
+	/**
+	 * Gets the solicitud list unanswered 
+	 * @return a solicitud list
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByNoAnswered() throws ExceptionHandler{
+		return solicitudDAO.getByNoAnswered();
+	}
+	
+	/**
+	 * Gets the solicitud list answered 
+	 * @return a solicitud list
+	 * @throws ExceptionHandler manage the error occurred consulting the list
+	 */
+	public List<Solicitud> getByAnswered() throws ExceptionHandler{
+		return solicitudDAO.getByAnswered();
+	}
+	
+	/**
 	 * Validate that a string have a correo syntax
 	 * @param email string to validate
 	 * @return true if email have a correct syntax or false
@@ -200,5 +306,20 @@ public class SolicitudBL {
 	        return false;
 	    }
 	    return true;
+	}
+	
+	/**
+	 * Constructs a response of a solicitud to send via email
+	 * given an identification a response 
+	 * @param id identification of a solicitud
+	 * @param respuesta response of a solicitud
+	 * @return html message to send via email
+	 */
+	private String construcRespuesta(int id, String respuesta){
+		String content = "<p><strong>Hola</strong></p>"+
+				"<p>"+respuesta+"</p>"+
+				"<p><a href=\"http://localhost:8080/pqrs/servlets/calificacion/?id="+id+"\""+
+				" target=\"_blank\">Encuesta de Satisfacci&oacute;n</a></p>";
+		return content;
 	}
 }
