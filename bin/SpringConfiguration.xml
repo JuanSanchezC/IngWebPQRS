@@ -63,6 +63,7 @@
 		<property name="filialDAO" ref="filialDAO"/>
 		<property name="tipoSolicitudDAO" ref="tipoSolicitudDAO"/>
 		<property name="facturaDAO" ref="facturaDAO"/>
+		<property name="empleadoDAO" ref="empleadoDAO"/>
 	</bean>
 	<tx:annotation-driven/>
 </beans>

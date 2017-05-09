@@ -1,5 +1,6 @@
 package co.edu.udea.iw.bl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -18,6 +19,7 @@ import co.edu.udea.iw.dto.Factura;
 import co.edu.udea.iw.dto.Filial;
 import co.edu.udea.iw.dto.Motivo;
 import co.edu.udea.iw.dto.Solicitud;
+import co.edu.udea.iw.dto.TiempoRespuesta;
 import co.edu.udea.iw.dto.TipoSolicitud;
 import co.edu.udea.iw.exception.ExceptionHandler;
 
@@ -239,10 +241,9 @@ public class SolicitudBL {
 	 * @param id identification of a solicitud
 	 * @throws ExceptionHandler manage the error occurred sending an email
 	 */
-	public void sendEmail(int id) throws ExceptionHandler{
+	private void sendEmail(int id) throws ExceptionHandler{
 		Solicitud solicitud = solicitudDAO.getById(id);
-		//String correo = solicitud.getCorreo();
-		String correo = "estudianteingwebudea@gmail.com";
+		String correo = solicitud.getCorreo();
 		String respuesta = solicitud.getRespuesta();
 		String content = construcRespuesta(id, respuesta);
 		SendMailTLS sender = new SendMailTLS();
@@ -277,6 +278,60 @@ public class SolicitudBL {
 	 */
 	public List<Solicitud> getByAnswered() throws ExceptionHandler{
 		return solicitudDAO.getByAnswered();
+	}
+	
+	/**
+	 * Gets a solicitud list given a date range and name of column
+	 * @param initDate initial date
+	 * @param finDate final date
+	 * @param nameDate name of the column to apply the range
+	 * @return a solicitud list
+	 * @throws ExceptionHandler manage the error occurred consulting a solicitud list
+	 */
+	public List<Solicitud> getByDateRange(Date initDate, Date finDate, String nameDate) throws ExceptionHandler{
+		return solicitudDAO.getByDateRange(initDate, finDate, nameDate);
+	}
+	
+	/**
+	 * Gets a {@link TiempoRespuesta} list of the answered solicitud given a date range
+	 * @param initDate initial date
+	 * @param finDate final date
+	 * @return a {@link TiempoRespuesta} list 
+	 * @throws ExceptionHandler manage the error occurred consulting a solicitud list
+	 */
+	public List<TiempoRespuesta> getTiemposRespuesta(Date initDate, Date finDate) throws ExceptionHandler{
+		List<Solicitud> solicitudList = solicitudDAO.getByDateRangeAnswered(initDate, finDate);
+		List<TiempoRespuesta> respuestaList = new ArrayList<TiempoRespuesta>();
+		TiempoRespuesta respuesta = new TiempoRespuesta();
+		int i;
+		long fechaCreacion;
+		long fechaRespuesta;
+		int tiempoRespuesta;
+		for(i=0; i<solicitudList.size(); i++){
+			fechaCreacion = solicitudList.get(i).getFechaCreacion().getTime();
+			fechaRespuesta = solicitudList.get(i).getFechaRespuesta().getTime();
+			tiempoRespuesta = (int) ((fechaCreacion - fechaRespuesta)/(1000*60*60*24));
+			
+			respuesta.setId(solicitudList.get(i).getId());
+			respuesta.setTipoSolicitud(solicitudList.get(i).getTipoSolicitud().getNombre());
+			respuesta.setTiempoRespuesta(tiempoRespuesta);
+			respuestaList.add(respuesta);
+		}
+		return respuestaList;
+	}
+	
+	/**
+	 * Decides if a solicitud is answered or not
+	 * @param id identification of a solicitud
+	 * @return true if solicitud is answered and false in other case
+	 * @throws ExceptionHandler manage the occured consulting a solicitud
+	 */
+	public boolean isAnswered(int id) throws ExceptionHandler{
+		Solicitud solicitud = solicitudDAO.getById(id);
+		if(solicitud.getRespuesta().equals(null) || solicitud.getRespuesta().isEmpty()){
+			return false;
+		}
+		return true;
 	}
 	
 	/**

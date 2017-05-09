@@ -35,7 +35,7 @@ public class EmpleadoDAOImpTest {
 	public void testGetById() {
 		Empleado empleado = null;
 		try {
-			empleado = empleadoDAO.getById(1);
+			empleado = empleadoDAO.getById(2);
 			assertTrue(empleado != null);
 		} catch (ExceptionHandler e) {
 			e.printStackTrace();
